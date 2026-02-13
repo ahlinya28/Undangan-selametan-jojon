@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan: Joni & Verny</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --romantic-pink: #fce4ec;
+            --deep-pink: #f06292;
+            --romantic-blue: #e3f2fd;
+            --deep-blue: #42a5f5;
+            --white-trans: rgba(255, 255, 255, 0.85);
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Parallax Backgrounds */
+        .parallax-section {
+            min-height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-1 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2070'); }
+        .section-2 { background-image: linear-gradient(var(--romantic-pink), var(--romantic-blue)); }
+        .section-3 { background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=2069'); }
+        .section-4 { background-image: linear-gradient(var(--romantic-blue), var(--romantic-pink)); }
+
+        .mempelai-font {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* Floating Menu */
+        .floating-nav {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: var(--white-trans);
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            backdrop-filter: blur(5px);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .floating-nav a {
+            text-decoration: none;
+            color: var(--deep-pink);
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 5px 10px;
+        }
+
+        /* Countdown */
+        .countdown-item {
+            background: var(--white-trans);
+            border-radius: 15px;
+            padding: 15px;
+            min-width: 80px;
+            margin: 5px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .countdown-item span {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--deep-pink);
+        }
+
+        /* QR Modal */
+        #qrModal .modal-content {
+            border-radius: 20px;
+            border: none;
+        }
+
+        /* Chat System */
+        .chat-container {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            height: 400px;
+            overflow-y: auto;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .chat-bubble {
+            background: var(--romantic-pink);
+            border-radius: 15px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-left: 5px solid var(--deep-pink);
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Gift Section */
+        .gift-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .btn-custom {
+            background: var(--deep-pink);
+            color: white;
+            border-radius: 25px;
+            padding: 10px 30px;
+            border: none;
+            transition: 0.3s;
+        }
+        .btn-custom:hover {
+            background: var(--deep-blue);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Nav -->
+    <div class="floating-nav">
+        <a href="#home"><i class="bi bi-house-heart"></i></a>
+        <a href="#acara">Acara</a>
+        <a href="#gift">Hadiah</a>
+        <a href="#ucapan">Ucapan</a>
+        <button class="btn btn-sm btn-custom ms-2" data-bs-toggle="modal" data-bs-target="#qrModal">
+            <i class="bi bi-qr-code"></i> Scan
+        </button>
+    </div>
+
+    <!-- Section 1: Hero & Slideshow -->
+    <section id="home" class="p-0">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="height: 100vh;">
+                    <div class="parallax-section section-1 w-100">
+                        <div class="text-center text-white">
+                            <h1 class="mempelai-font mb-0">Joni & Verny</h1>
+                            <p class="fs-4 fw-light">Akan Segera Menikah</p>
+                            <div id="timer" class="d-flex justify-content-center mt-4">
+                                <!-- JS Populated -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" style="height: 100vh;">
+                    <div class="parallax-section" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=2070');">
+                        <div class="text-center text-white">
+                            <h2 class="mempelai-font">The Wedding Of</h2>
+                            <p class="fs-3">Minggu, 19 April 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Info Acara -->
+    <section id="acara" class="parallax-section section-2">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-md-8 bg-white p-5 rounded-4 shadow-lg">
+                    <h2 class="mempelai-font text-dark mb-4" style="text-shadow:none">Waktu & Tempat</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <i class="bi bi-calendar-check fs-1 text-primary"></i>
+                            <h4 class="mt-2">Akad Nikah</h4>
+                            <p>09.00 WIB - Selesai</p>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <i class="bi bi-geo-alt fs-1 text-danger"></i>
+                            <h4 class="mt-2">Lokasi</h4>
+                            <p>Jalan Maju Mundur 12<br>Surabaya</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-custom" onclick="window.open('https://www.google.com/maps?q=-7.2823682,112.6994013', '_blank')">
+                        <i class="bi bi-map-fill"></i> Lihat Peta Navigasi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Hadiah Digital -->
+    <section id="gift" class="parallax-section section-3">
+        <div class="container text-center">
+            <h2 class="mempelai-font text-dark mb-5" style="text-shadow:none">Wedding Gift</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="gift-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" alt="BCA" width="150" class="mb-4">
+                        <p class="mb-1">No. Rekening BCA:</p>
+                        <h3 id="noRek" class="fw-bold">12374892</h3>
+                        <p class="text-muted">A/n Joni Hamarlambang</p>
+                        <button class="btn btn-outline-secondary btn-sm mt-2" onclick="copyToClipboard('12374892')">
+                            <i class="bi bi-copy"></i> Salin Nomor Rekening
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Ucapan & Doa -->
+    <section id="ucapan" class="parallax-section section-4">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <div class="bg-white p-4 rounded-4 shadow">
+                        <h3 class="mb-4">Berikan Ucapan</h3>
+                        <div class="mb-3">
+                            <label class="form-label">Nama</label>
+                            <input type="text" id="namaInput" class="form-control" placeholder="Nama Anda">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Ucapan & Doa</label>
+                            <textarea id="ucapanInput" class="form-control" rows="4" placeholder="Tulis doa terbaik Anda..."></textarea>
+                        </div>
+                        <button class="btn btn-custom w-100" id="sendBtn">Kirim Ucapan</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-white mb-4">Ucapan Sahabat</h3>
+                    <div class="chat-container" id="chatList">
+                        <!-- Initial Dummy List -->
+                        <div class="chat-bubble">
+                            <strong>Andi Wijaya:</strong> Selamat ya Joni & Verny! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.
+                        </div>
+                        <div class="chat-bubble">
+                            <strong>Sinta Bella:</strong> Cantik banget Verny! Selamat menempuh hidup baru ya kalian berdua.
+                        </div>
+                        <div class="chat-bubble">
+                            <strong>Budi Santoso:</strong> Akhirnya sah juga! Ditunggu makan-makannya di Surabaya!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal QR Code -->
+    <div class="modal fade" id="qrModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+                <div class="modal-body">
+                    <h4 class="mb-3">E-Ticket Check-In</h4>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=JoniVernyWedding2026" alt="QR Code" class="img-fluid mb-3">
+                    <p class="text-muted">Tunjukkan QR Code ini kepada penerima tamu untuk proses Check In / Check Out acara.</p>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-success text-white">
+                <strong class="me-auto">Sistem Undangan</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="toastMsg">
+                Pesan Anda berhasil terkirim!
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Mendefinisikan fungsi copyToClipboard secara global agar bisa dipanggil dari atribut onclick
+        function copyToClipboard(text) {
+            // Menggunakan cara modern atau fallback
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast("Nomor rekening berhasil disalin!");
+                });
+            } else {
+                var $temp = $("<input>");
+                $("body").append($temp);
+                $temp.val(text).select();
+                document.execCommand("copy");
+                $temp.remove();
+                showToast("Nomor rekening berhasil disalin!");
+            }
+        }
+
+        function showToast(message) {
+            const toastEl = document.getElementById('liveToast');
+            const toastMsgEl = document.getElementById('toastMsg');
+            if (toastEl && toastMsgEl) {
+                toastMsgEl.innerText = message;
+                const toast = new bootstrap.Toast(toastEl);
+                toast.show();
+            }
+        }
+
+        // Membungkus kode jQuery dalam fungsi tunggu agar $ terdefinisi
+        function initApp() {
+            if (typeof $ === 'undefined') {
+                setTimeout(initApp, 100);
+                return;
+            }
+
+            $(document).ready(function() {
+                // 1. Countdown Timer Logic
+                const weddingDate = new Date("April 19, 2026 09:00:00").getTime();
+
+                const timerFunction = setInterval(function() {
+                    const now = new Date().getTime();
+                    const distance = weddingDate - now;
+
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    $("#timer").html(`
+                        <div class="countdown-item"><span>${days}</span>Hari</div>
+                        <div class="countdown-item"><span>${hours}</span>Jam</div>
+                        <div class="countdown-item"><span>${minutes}</span>Menit</div>
+                        <div class="countdown-item"><span>${seconds}</span>Detik</div>
+                    `);
+
+                    if (distance < 0) {
+                        clearInterval(timerFunction);
+                        $("#timer").html("<h3>Acara Telah Berlangsung</h3>");
+                    }
+                }, 1000);
+
+                // 2. Chat Simulation Logic
+                $('#sendBtn').on('click', function() {
+                    const nama = $('#namaInput').val();
+                    const ucapan = $('#ucapanInput').val();
+
+                    if (nama && ucapan) {
+                        const newChat = `
+                            <div class="chat-bubble">
+                                <strong>${nama}:</strong> ${ucapan}
+                            </div>
+                        `;
+                        $('#chatList').prepend(newChat);
+                        
+                        showToast(`Terima kasih ${nama}, ucapan Anda telah muncul!`);
+
+                        // Clear Input
+                        $('#namaInput').val('');
+                        $('#ucapanInput').val('');
+                    } else {
+                        alert("Mohon isi nama dan ucapan terlebih dahulu.");
+                    }
+                });
+            });
+        }
+
+        // Jalankan inisialisasi
+        initApp();
+    </script>
+</body>
+</html>
